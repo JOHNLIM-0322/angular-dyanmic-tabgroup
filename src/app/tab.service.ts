@@ -7,6 +7,8 @@ import { ITab } from './tab.model';
 export class TabService {
 
   tabs: ITab[] = [];
+
+  // tabOptions records will be loaded from the Server
   tabOptions: ITab[] = [
     { name: 'Page1', url: '/page1?param=1' }, 
     { name: 'Page2', url: '/page2?param=2' }, 
