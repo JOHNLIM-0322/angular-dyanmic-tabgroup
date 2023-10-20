@@ -31,8 +31,13 @@ export class MainContentComponent implements OnInit {
   }
 
   closeTab(index: number, event: Event) {
-    this.tabService.deleteTab(index);
+    
+    let tab = this.tabService.deleteTab(index, this.activeTabUrl);
+    console.log(event);
     event.preventDefault();
+    if (tab != null) {
+      this.router.navigateByUrl(tab.url, { skipLocationChange: true});
+    }
   }
 
   onTabChange(event:any) {

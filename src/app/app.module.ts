@@ -10,6 +10,9 @@ import { Page3Component } from './page3/page3.component';
 
 import { MainContentComponent } from './main-content/main-content.component';
 import { MenuComponent } from './menu/menu.component';
+import { Page4Component } from './page4/page4.component';
+import { Page5Component } from './page5/page5.component';
+import { Page6Component } from './page6/page6.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { MenuComponent } from './menu/menu.component';
     Page2Component,
     Page3Component,
     MainContentComponent,
-    MenuComponent
+    MenuComponent,
+    Page4Component,
+    Page5Component,
+    Page6Component
   ],
   imports: [
     BrowserModule,
