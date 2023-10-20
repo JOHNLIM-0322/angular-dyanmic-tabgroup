@@ -39,8 +39,13 @@ export class TabService {
     this.tabs.splice(index, 1);
     if (deletedTab.url === activatedUrl) {
       if (this.tabs.length > 0) {
-        // activated the page on the left
-        return this.tabs[index-1];
+        
+        let nextIndex: number = 0;
+        if ( index > 0) {
+          // activated the page on the left
+          nextIndex = index - 1;
+        }
+        return this.tabs[nextIndex];
       }
     } else {
       // No, do nothing, let the activated tab be activated
