@@ -47,12 +47,9 @@ export class TabService {
         }
         return this.tabs[nextIndex];
       }
-    } else {
-      // No, do nothing, let the activated tab be activated
     }
 
-
-
+    // do nothing, let the activated tab be activated
     return null;
   }
 }
