@@ -1,0 +1,36 @@
+<!-- <div class="main-content">
+    <nav class="nav-tabs" ngbNav #nav="ngbNav" [(activeId)]="activeTabUrl" (navChange)="onTabChange($event)">
+        <ng-container [ngbNavItem]="tab.url" *ngFor="let tab of tabs; index as i">
+            <ng-template ngbTabTitle>
+                <span>{{tab.name}}</span>
+                <span (click)="closeTab(i, $event)">&times;</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <router-outlet></router-outlet>
+                
+            </ng-template>
+        </ng-container>
+    </nav>
+</div> -->
+<ul class="nav-tabs" ngbNav #nav="ngbNav" [(activeId)]="activeTabUrl" (navChange)="onTabChange($event)">
+    <li [ngbNavItem]="tab.url" *ngFor="let tab of tabs; index as i">
+        <button ngbNavLink>
+            <span>{{tab.name}}</span>
+            <span (click)="closeTab(i, $event)">&times;</span>
+        </button>
+        <ng-template ngbNavContent>
+            <router-outlet></router-outlet>
+        </ng-template>
+    </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+<!-- <pre>Active: {{ active }}</pre> -->
+
+
+<!-- <div>
+    <label *ngFor="let tab of tabs">
+        {{tab.name}}
+    </label>
+</div> -->
