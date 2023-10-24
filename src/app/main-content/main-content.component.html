@@ -12,11 +12,15 @@
         </ng-container>
     </nav>
 </div> -->
-<ul class="nav-tabs" ngbNav #nav="ngbNav" [(activeId)]="activeTabUrl" (navChange)="onTabChange($event)">
-    <li [ngbNavItem]="tab.url" *ngFor="let tab of tabs; index as i">
-        <button ngbNavLink>
-            <span>{{tab.name}}</span>
-            <span (click)="closeTab(i, $event)">&times;</span>
+
+<ul [ngStyle]="{'width': tabs.length > 0 ? '80%' : '0%' }" class="nav nav-tabs bottom-nav-tabs" ngbNav #nav="ngbNav" [(activeId)]="activeTabUrl" (navChange)="onTabChange($event)">
+    <li [ngStyle]="{'border-top-color': activeTabUrl === tab.url ? '#dee2e6' : 'transparent', 
+                    'border-top-style': activeTabUrl === tab.url ? 'solid' : 'none', 
+                    'border-top-width': activeTabUrl === tab.url ? '1px' : '0'  }" 
+                    [ngbNavItem]="tab.url" *ngFor="let tab of tabs; index as i">
+        <button class="mirror-button" ngbNavLink>
+            <span>{{tab.name}}</span> 
+            <span style="border-top-color: transparent;" class="btn-close ms-2 fw-light" (click)="closeTab(i, $event)"></span>
         </button>
         <ng-template ngbNavContent>
             <router-outlet></router-outlet>
@@ -25,6 +29,11 @@
 </ul>
 
 <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+
+
+
+
 
 <!-- <pre>Active: {{ active }}</pre> -->
 

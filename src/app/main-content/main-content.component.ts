@@ -43,4 +43,9 @@ export class MainContentComponent implements OnInit {
   onTabChange(event:any) {
     this.router.navigateByUrl(event.nextId, { skipLocationChange: true});
   }
+
+  reserveTabDisplay(name:string) {
+    return "hello1"
+  }
+
 }

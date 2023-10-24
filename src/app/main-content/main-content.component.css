@@ -1,0 +1,13 @@
+.bottom-nav-tabs {
+    position: absolute;
+    bottom: 15px;
+    transform: scaleY(-1);
+}
+
+
+.mirror-button {
+    transform: scaleY(-1);
+    border-top: none;
+    border-radius: 0%;
+    display: flex;
+}
