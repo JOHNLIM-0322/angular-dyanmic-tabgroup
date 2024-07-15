@@ -13,6 +13,8 @@ import { MenuComponent } from './menu/menu.component';
 import { Page4Component } from './page4/page4.component';
 import { Page5Component } from './page5/page5.component';
 import { Page6Component } from './page6/page6.component';
+import { TabContainerComponent } from './tab-container/tab-container.component';
+import { ComponentAComponent } from './component-a/component-a.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { Page6Component } from './page6/page6.component';
     MenuComponent,
     Page4Component,
     Page5Component,
-    Page6Component
+    Page6Component,
+    TabContainerComponent,
+    ComponentAComponent
   ],
   imports: [
     BrowserModule,

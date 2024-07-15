@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,6 +9,10 @@ import { ActivatedRoute } from '@angular/router';
 export class Page3Component implements OnInit {
 
   param: number= 0;
+
+  @Input() tabIndex:number = 0;
+  @Input() componentUrl:string = '';
+
   constructor(private route: ActivatedRoute){}
 
   ngOnInit(): void {

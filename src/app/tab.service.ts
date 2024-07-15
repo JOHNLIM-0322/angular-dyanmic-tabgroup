@@ -10,12 +10,12 @@ export class TabService {
 
   // tabOptions records will be loaded from the Server
   tabOptions: ITab[] = [
-    { name: 'Page1', url: '/page1?param=1' }, 
-    { name: 'Page2', url: '/page2?param=2' }, 
-    { name: 'Page3', url: '/page3?param=3' },
-    { name: 'Page4', url: '/page4?param=4' },
-    { name: 'Page5', url: '/page5?param=5' },
-    { name: 'Page6', url: '/page6?param=6' },
+    { name: 'Page1', url: '/page1' }, 
+    { name: 'Page2', url: '/page2' }, 
+    { name: 'Page3', url: '/page3' },
+    { name: 'Page4', url: '/page4' },
+    { name: 'Page5', url: '/page5' },
+    { name: 'Page6', url: '/page6' },
   ];
   constructor() {}
 

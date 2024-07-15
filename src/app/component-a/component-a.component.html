@@ -1,0 +1,10 @@
+<div>
+  <h2>Component A</h2>
+  <p>This is an instance of Component A.</p>
+  <p>Tab Index: {{tabIndex}}</p>
+  <input #num1 [id]="'num1'" type="number" [disabled]="isDisabled">
+  <input #num2 [id]="'num2'" type="number" [disabled]="isDisabled">
+  <button (click)="add2Number()">Add Numbers</button>
+  <button (click)="disabledInput()">Disabled</button>
+  <h3>{{this.number1}} + {{this.number2}} = {{sumValue}}</h3>
+</div>

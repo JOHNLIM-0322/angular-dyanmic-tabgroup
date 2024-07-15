@@ -13,22 +13,29 @@
     </nav>
 </div> -->
 
-<ul [ngStyle]="{'width': tabs.length > 0 ? '80%' : '0%' }" class="nav nav-tabs bottom-nav-tabs" ngbNav #nav="ngbNav" [(activeId)]="activeTabUrl" (navChange)="onTabChange($event)">
+<h1>THIS IS MAIN CONTENT</h1>
+<router-outlet></router-outlet>
+
+<!-- <ul [ngStyle]="{'width': tabs.length > 0 ? '80%' : '0%' }" class="nav nav-tabs bottom-nav-tabs" ngbNav #nav="ngbNav" [(activeId)]="activeTabUrl" (navChange)="onTabChange($event)"> -->
+    <ul [ngStyle]="{'width': tabs.length > 0 ? '80%' : '0%' }" class="nav nav-tabs bottom-nav-tabs" (change)="onTabChange($event)">
+
     <li [ngStyle]="{'border-top-color': activeTabUrl === tab.url ? '#dee2e6' : 'transparent', 
                     'border-top-style': activeTabUrl === tab.url ? 'solid' : 'none', 
                     'border-top-width': activeTabUrl === tab.url ? '1px' : '0'  }" 
-                    [ngbNavItem]="tab.url" *ngFor="let tab of tabs; index as i">
-        <button class="mirror-button" ngbNavLink>
+                    [routerLinkActive]="tab.url" *ngFor="let tab of tabs; index as i">
+        <!-- <button class="mirror-button" ngbNavLink> -->
+        <button class="mirror-button">
             <span>{{tab.name}}</span> 
             <span style="border-top-color: transparent;" class="btn-close ms-2 fw-light" (click)="closeTab(i, $event)"></span>
         </button>
-        <ng-template ngbNavContent>
-            <router-outlet></router-outlet>
-        </ng-template>
+        <!-- <ng-template [ngbNavContent]> -->
+
+            <span></span>
+        <!-- </ng-template> -->
     </li>
 </ul>
 
-<div [ngbNavOutlet]="nav" class="mt-2"></div>
+<!-- <div [ngbNavOutlet]="nav" class="mt-2"></div> -->
 
 
 

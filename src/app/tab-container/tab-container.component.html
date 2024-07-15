@@ -1,0 +1,18 @@
+<div>
+  <button (click)="addTab()">Add Tab</button>
+</div>
+<ul class="nav nav-tabs">
+  <li class="nav-item" *ngFor="let tab of tabs; let i = index">
+    <a class="nav-link" [class.active]="i === selectedIndex" (click)="selectTab(i)">
+      Tab {{ tab.id + 1 }}
+    </a>
+  </li>
+</ul>
+<div *ngFor="let tab of tabs; let i = index">
+  <div [hidden]="i !== selectedIndex">
+    <app-component-a [tabIndex]="tab.id + 1" [componentUrl]="tab.url"></app-component-a>
+    <app-page1 *ngIf="tab.url === '/page1'" [tabIndex]="tab.id + 1" [componentUrl]="tab.url"></app-page1>
+    <app-page2 *ngIf="tab.url === '/page2'" [tabIndex]="tab.id + 1" [componentUrl]="tab.url"></app-page2>
+    <app-page3 *ngIf="tab.url === '/page3'" [tabIndex]="tab.id + 1" [componentUrl]="tab.url"></app-page3>
+  </div>
+</div>

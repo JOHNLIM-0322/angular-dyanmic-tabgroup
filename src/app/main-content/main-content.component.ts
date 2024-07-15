@@ -31,7 +31,6 @@ export class MainContentComponent implements OnInit {
   }
 
   closeTab(index: number, event: Event) {
-    
     let nextActiveTab = this.tabService.deleteTab(index, this.activeTabUrl);
     console.log(event);
     event.preventDefault();
@@ -41,7 +40,8 @@ export class MainContentComponent implements OnInit {
   }
 
   onTabChange(event:any) {
-    this.router.navigateByUrl(event.nextId, { skipLocationChange: true});
+    console.log("ontabchange: ", event);
+    this.router.navigateByUrl(event.nextId, { skipLocationChange: false});
   }
 
   reserveTabDisplay(name:string) {
